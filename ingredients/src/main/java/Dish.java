@@ -67,18 +67,15 @@ public class Dish {
         return ingredients;
     }
 
-    /*
+
     public void setIngredients(List<Ingredient> ingredients) {
         if (ingredients == null) {
             this.ingredients = null;
-            return;
+        } else {
+            this.ingredients = ingredients;
         }
-        for (int i = 0; i < ingredients.size(); i++) {
-            ingredients.get(i).setDish(this);
-        }
-        this.ingredients = ingredients;
     }
-     */
+
 
     @Override
     public boolean equals(Object o) {

@@ -5,7 +5,6 @@ public class Ingredient {
     private String name;
     private CategoryEnum category;
     private Double price;
-    //private Dish dish;
     private Double quantity;
 
     public Double getQuantity() {
@@ -29,11 +28,6 @@ public class Ingredient {
         this.category = category;
         this.price = price;
     }
-
-    /*public String getDishName() {
-        return dish == null ? null : dish.getName();
-    }
-     */
 
     public Integer getId() {
         return id;
@@ -67,26 +61,17 @@ public class Ingredient {
         this.price = price;
     }
 
-/*
-    public Dish getDish() {
-        return dish;
-    }
-
-    public void setDish(Dish dish) {
-        this.dish = dish;
-    }
-*/
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Ingredient that = (Ingredient) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && category == that.category && Objects.equals(price, that.price);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && category == that.category && Objects.equals(price, that.price) && Objects.equals(quantity, that.quantity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, category, price);
+        return Objects.hash(id, name, category, price, quantity);
     }
 
     @Override
