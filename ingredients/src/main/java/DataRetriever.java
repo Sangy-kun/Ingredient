@@ -9,7 +9,6 @@ public class DataRetriever {
         Connection connection = dbConnection.getConnection();
         Dish dish = null;
 
-        // Ajout de la colonne price dans la requête SELECT
         String SqlDish = "SELECT id, name, dish_type FROM dish WHERE id = ?";
 
         try (PreparedStatement ps = connection.prepareStatement(SqlDish)) {
@@ -20,8 +19,6 @@ public class DataRetriever {
                     dish.setId(rs.getInt("id"));
                     dish.setName(rs.getString("name"));
                     dish.setDishType(DishTypeEnum.valueOf(rs.getString("dish_type")));
-                    // On retire cette ligne car price n'est pas dans la requête
-                    // dish.setPrice(rs.getDouble("price"));
                 }
             }
         }
