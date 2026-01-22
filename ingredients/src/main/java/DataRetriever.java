@@ -47,10 +47,12 @@ public class DataRetriever {
                 }
             }
         }
-
+        dbConnection.closeConnection(connection);
         dish.setIngredients(ingredients);
         return dish;
     }
+
+
 }
 
 
